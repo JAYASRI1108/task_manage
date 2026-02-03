@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskFlow Work Management System</title>
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body
+
+    {
+      background:#f5f5f5;
+    }
+    .hero-img{
+      max-width:100%;
+    }
+    .stats-box{
+      text-align:center;
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 5px 12px #ccc;
+    }
+    .stats-number{
+      font-size:32px;
+      font-weight:bold;
+      color:#A218FF;
+    }
+    .project-container{
+      background:#A218FF;
+    }
+  </style>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" href="#">TaskFlow</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li class="nav-item"><a class="nav-link active text-primary" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#process">Workflow</a></li>
+        <li class="nav-item"><a class="nav-link" href="#modules">Modules</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<section class="py-5" id="home">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6">
+        <h1 class="fw-bold display-5">
+          Smart Task & Workload <br> Management System
+        </h1>
+        <p class="mt-3 text-muted">
+          TaskFlow is a web-based application that helps users efficiently manage tasks,
+          track deadlines, analyze workload, and improve productivity using a simple
+          and user-friendly interface.
+        </p>
+
+        <button class="btn btn-primary px-4 py-2"
+        style="--bs-btn-bg:#A218FF;--bs-btn-border-color:#A218FF;">
+        Get Started
+      </button>
+    </div>
+
+    <div class="col-lg-6 text-center">
+      <img src="imag1.jpg" class="hero-img" width="350" height="350">
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section class="py-4">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="stats-box">
+          <div class="stats-number">1000+</div>
+          <p class="text-muted">Tasks Managed</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stats-box">
+          <div class="stats-number">500+</div>
+          <p class="text-muted">Deadlines Tracked</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stats-box">
+          <div class="stats-number">300+</div>
+          <p class="text-muted">Active Users</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5" id="about">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6">
+        <h2 class="fw-bold">About TaskFlow</h2>
+        <p class="text-muted">
+          TaskFlow is a frontend-based task management system built using HTML, CSS,
+          JavaScript, and Bootstrap. It helps users organize work efficiently without
+          the need for backend or database integration.
+        </p>
+        <p class="text-muted">
+          The system stores task data using browser localStorage and provides reports,
+          reminders, and priority-based task analysis.
+        </p>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img src="img2.jpg" class="img-fluid" width="450" height="450">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 bg-light" id="process">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">System Workflow</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-3">
+        <div class="p-4 bg-white shadow-sm rounded">
+          <i class="fa-solid fa-pen-to-square fs-1 text-primary mb-3"></i>
+          <h5>Add Tasks</h5>
+          <p class="text-muted">Create tasks with priority, dates, and status</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="p-4 bg-white shadow-sm rounded">
+          <i class="fa-solid fa-layer-group fs-1 text-primary mb-3"></i>
+          <h5>Organize</h5>
+          <p class="text-muted">Categorize and store tasks securely</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="p-4 bg-white shadow-sm rounded">
+          <i class="fa-solid fa-chart-line fs-1 text-primary mb-3"></i>
+          <h5>Analyze</h5>
+          <p class="text-muted">View task reports and progress summary</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="p-4 bg-white shadow-sm rounded">
+          <i class="fa-solid fa-bell fs-1 text-primary mb-3"></i>
+          <h5>Remind</h5>
+          <p class="text-muted">Receive deadline-based alerts</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5" id="modules">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">System Modules</h2>
+
+    <div class="row g-4">
+
+     
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <img src="img3.jpg" class="card-img-top p-4"
+               alt="Workload Management" width="350" height="350">
+          <div class="card-body">
+            <h5 class="fw-bold">
+              <a href="work_load.html" class="text-decoration-none text-dark">
+                Add Your Task
+              </a>
+            </h5>
+            <p class="text-muted">
+              Workload Management System – add, update, and manage daily tasks efficiently.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 9 : Status Report -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <img src="img4.jpg" class="card-img-top p-4"
+               alt="Task Status Report" width="350" height="350">
+          <div class="card-body">
+            <h5 class="fw-bold">
+              <a href="report_summary.html" class="text-decoration-none text-dark">
+                Task Status
+              </a>
+            </h5>
+            <p class="text-muted">
+              Task Status & Progress Report – view completed, pending, and in-progress tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 11 : Reminder -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <img src="img5.jpg" class="card-img-top p-4"
+               alt="Task Reminder" width="350" height="350">
+          <div class="card-body">
+            <h5 class="fw-bold">
+              <a href="remainder.html" class="text-decoration-none text-dark">
+                Task Alert
+              </a>
+            </h5>
+            <p class="text-muted">
+              Task Reminder & Alert System – deadline-based alerts for today and tomorrow.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 14 : Recommendation -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <img src="img6.jpg" class="card-img-top p-4"
+               alt="Task Recommendation" width="350" height="350">
+          <div class="card-body">
+            <h5 class="fw-bold">
+              <a href="recomendation_task.html" class="text-decoration-none text-dark">
+                Task Recommendation
+              </a>
+            </h5>
+            <p class="text-muted">
+              Task Priority Recommendation based on deadline and task urgency.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="py-5 bg-light" id="features">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Key Features</h2>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">✔ Task Creation & Deletion</li>
+      <li class="list-group-item">✔ Priority Recommendation</li>
+      <li class="list-group-item">✔ Deadline Reminder Alerts</li>
+      <li class="list-group-item">✔ Status & Progress Reports</li>
+      <li class="list-group-item">✔ LocalStorage Data Persistence</li>
+    </ul>
+  </div>
+</section>
+
+
+<footer class="py-4 bg-dark text-white text-center">
+  <p class="mb-1">TaskFlow – Web-Based Task & Workload Management System</p>
+  <small>Developed by <b>Jayasri</b> | 2025</small>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Status Summary</title>
+
+  <style>
+    *{
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background: #f2f2f2;
+      padding: 20px;
+    }
+
+    h1{
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .summary-box{
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 8px 15px grey;
+    }
+
+    .summary-box p{
+      font-size: 16px;
+      margin: 12px 0;
+    }
+
+    span{
+      font-weight: bold;
+    }
+
+    button{
+      display: block;
+      margin: 25px auto;
+      padding: 10px 20px;
+      background: blue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Task Status Summary</h1>
+
+  <div class="summary-box">
+    <p>Total Tasks : <span id="total">0</span></p>
+    <p>Completed Tasks : <span id="completed">0</span></p>
+    <p>In Progress Tasks : <span id="progress">0</span></p>
+    <p>Not Started Tasks : <span id="notstarted">0</span></p>
+  </div>
+
+  <button onclick="generateStatusReport()">Generate Status Report</button>
+
+  <script>
+    function generateStatusReport(){
+
+      
+      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+      let total = tasks.length;
+      let completed = 0;
+      let progress = 0;
+      let notstarted = 0;
+
+      tasks.forEach(task => {
+        if(task.status === "Completed"){
+          completed++;
+        }
+        else if(task.status === "In Progress"){
+          progress++;
+        }
+        else{
+          notstarted++;
+        }
+      });
+
+      document.getElementById("total").innerText = total;
+      document.getElementById("completed").innerText = completed;
+      document.getElementById("progress").innerText = progress;
+      document.getElementById("notstarted").innerText = notstarted;
+    }
+  </script>
+
+</body>
+</html>

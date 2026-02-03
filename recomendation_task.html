@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task Priority Recommendation Module</title>
+
+<style>
+*{
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#f2f2f2;
+  padding:20px;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.box{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:25px;
+  border-radius:8px;
+  box-shadow:0 8px 15px grey;
+}
+
+.recommend{
+  background:#e6f0ff;
+  padding:15px;
+  border-left:5px solid blue;
+  margin-top:15px;
+}
+
+strong{
+  font-size:16px;
+}
+
+button{
+  display:block;
+  margin:20px auto;
+  padding:10px 20px;
+  background:green;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.no-task{
+  text-align:center;
+  color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Task Priority Recommendation Module</h1>
+
+<div class="box">
+  <button onclick="recommendTask()">Get Recommended Task</button>
+
+  <div id="result" class="recommend no-task">
+    Click the button to get task recommendation
+  </div>
+</div>
+
+<script>
+function recommendTask(){
+
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let result = document.getElementById("result");
+
+  if(tasks.length === 0){
+    result.innerHTML = "No tasks available";
+    return;
+  }
+
+  // Filter only incomplete tasks
+  let pendingTasks = tasks.filter(task => task.status !== "Completed");
+
+  if(pendingTasks.length === 0){
+    result.innerHTML = "All tasks are completed 🎉";
+    return;
+  }
+
+  // Priority order
+  const priorityOrder = { high: 1, medium: 2, low: 3 };
+
+  // Sort tasks based on priority
+  pendingTasks.sort((a, b) => {
+    return priorityOrder[a.priority] - priorityOrder[b.priority];
+  });
+
+  // Top priority task
+  let task = pendingTasks[0];
+
+  result.innerHTML = `
+    <strong>Recommended Task</strong><br><br>
+    Task Name : ${task.taskname}<br>
+    Priority  : ${task.priority}<br>
+    Status    : ${task.status}<br><br>
+    <em>Reason:</em> High priority task is not yet completed
+  `;
+}
+</script>
+
+</body>
+</html>
