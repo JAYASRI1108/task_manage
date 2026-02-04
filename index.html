@@ -35,6 +35,19 @@
     .project-container{
       background:#A218FF;
     }
+
+
+    @media (max-width: 991px) {
+  .navbar-brand {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-nav {
+    align-items: center;
+  }
+}
+
   </style>
 </head>
 
@@ -42,46 +55,29 @@
 
 
 <nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm">
-  <div class="container flex-lg-row flex-column text-center">
-
-    <!-- Brand -->
-    <a class="navbar-brand fw-bold fs-3 mx-lg-0 mx-auto" href="#">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3 mx-auto mx-lg-0" href="#">
       TaskFlow
     </a>
 
-    <!-- Toggle button -->
-    <button class="navbar-toggler mx-auto my-2"
+    <button class="navbar-toggler mx-auto"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menu -->
-    <div class="collapse navbar-collapse justify-content-lg-end justify-content-center"
-         id="navMenu">
-      <ul class="navbar-nav text-center gap-3">
-        <li class="nav-item">
-          <a class="nav-link active text-primary" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#process">Workflow</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#modules">Modules</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#features">Features</a>
-        </li>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-lg-auto gap-3 text-center">
+        <li class="nav-item"><a class="nav-link active text-primary" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#process">Workflow</a></li>
+        <li class="nav-item"><a class="nav-link" href="#modules">Modules</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
       </ul>
     </div>
-
   </div>
 </nav>
-
 
 
 <section class="py-5" id="home">
@@ -321,4 +317,5 @@
 
 </body>
 </html>
+
 
