@@ -37,9 +37,8 @@
     }
 
 
-   @media (max-width: 991px) {
-  .navbar-brand {
-    width: 100%;
+@media (max-width: 991px) {
+  .navbar-collapse {
     text-align: center;
   }
 
@@ -49,20 +48,21 @@
 }
 
 
+
   </style>
 </head>
 
 <body>
 <nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm">
-  <div class="container position-relative">
+  <div class="container">
 
-    <!-- Brand (center in mobile) -->
-    <a class="navbar-brand fw-bold fs-3 mx-auto mx-lg-0 text-center" href="#">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold fs-3" href="#">
       TaskFlow
     </a>
 
-    <!-- Toggle icon (always right) -->
-    <button class="navbar-toggler position-absolute end-0"
+    <!-- Toggle -->
+    <button class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navMenu">
@@ -71,7 +71,7 @@
 
     <!-- Menu -->
     <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-lg-auto gap-3 text-center">
+      <ul class="navbar-nav ms-lg-auto gap-3">
         <li class="nav-item"><a class="nav-link active text-primary" href="#home">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#process">Workflow</a></li>
@@ -321,6 +321,7 @@
 
 </body>
 </html>
+
 
 
 
