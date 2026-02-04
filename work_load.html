@@ -424,6 +424,17 @@ addRow(tasks[tasks.length - 1], tasks.length - 1);
        	background: grey;
        	color: white;
        }
+
+	.table-container{
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px){
+  table{
+    min-width: 900px; /* force horizontal scroll */
+  }
+}
      </style>
    </head>
 
@@ -472,20 +483,22 @@ addRow(tasks[tasks.length - 1], tasks.length - 1);
    		<button type="button" onclick="display()">Submit</button>
    	</form>
 
-   	<table id="taskTable">
-   		<tr>
-   			<th>Name</th>
-   			<th>Task</th>
-   			<th>Description</th>
-   			<th>Category</th>
-   			<th>Priority</th>
-   			<th>Start Date</th>
-   			<th>Deadline</th>
-   			<th>Estimated Time</th>
-   			<th>Status</th>
-   			<th>Action</th>
-   		</tr>
-   	</table>
+   	<div class="table-container">
+  <table id="taskTable">
+    <tr>
+      <th>Name</th>
+      <th>Task</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Priority</th>
+      <th>Start Date</th>
+      <th>Deadline</th>
+      <th>Estimated Time</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </table>
+</div>
 
 <script>
 
@@ -554,3 +567,4 @@ addRow(tasks[tasks.length - 1], tasks.length - 1);
 
 </body>
 </html>
+
