@@ -333,19 +333,6 @@ addRow(tasks[tasks.length - 1], tasks.length - 1);
 
 
 
-
-
-
-
-
-		
-
-
-
-
-
-		
-
 	</script>
 
 </body>
@@ -357,242 +344,213 @@ addRow(tasks[tasks.length - 1], tasks.length - 1);
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Module 1 – Workload Management</title>
+<title>Workload Management</title>
 
 <style>
-*{
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+	*{
+		box-sizing: border-box;
+		font-family: Arial, sans-serif;
+	}
 
-body{
-  background: #f2f2f2;
-  padding: 20px;
-}
+	body{
 
-h1{
-  text-align: center;
-}
+		background: #f2f2f2;
+		padding: 20px;
 
-form{
-  background: white;
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 8px 15px grey;
-  margin-bottom: 30px;
-}
+	}
 
-label{
-  font-weight: bold;
-}
+	h1{
+		text-align: center;
+	}
 
-input[type="text"],
-input[type="date"],
-input[type="time"],
-textarea,
-select{
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid grey;
-}
+	form{
+		background: white;
+		max-width: 900px;
+		margin: auto;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 8px 15px grey;
+		margin-bottom: 30px;
+	}
 
-textarea{
-  resize: none;
-  height: 70px;
-}
+      label{
+          font-weight: bold;
+       }
 
-input[type="radio"]{
-  width: auto;
-}
+      input[type="text"],
+      input[type="date"],
+      input[type="time"],
+      textarea,
 
-button{
-  background: blue;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
+      select{
+          width: 100%;
+          padding: 8px;
+          margin-top: 5px;
+          border-radius: 5px;
+          border: 1px solid grey;
+       }
 
-table{
-  width: 100%;
-  border-collapse: collapse;
-}
+       textarea{
+       	resize: none;
+       	height: 70px;
+       }
 
-th, td{
-  border: 1px solid black;
-  padding: 8px;
-  text-align: center;
-}
+       input[type="radio"]{
+       	width: auto;
+       }
 
-th{
-  background: grey;
-  color: white;
-}
-@media (max-width: 768px) {
+       button{
+       	background: blue;
+       	color: white;
+       	padding: 10px 15px;
+       	border: none;
+       	border-radius: 5px;
+       	cursor: pointer;
+       	margin-top: 10px;
+       }
 
-  table, thead, tbody, th, td, tr {
-    display: block;
-    width: 100%;
-  }
+       table{
+       	width: 100%;
+       	border-collapse: collapse;
+       }
 
-  thead {
-    display: none;
-  }
+       th, td{
+       	border: 1px solid black;
+       	padding: 8px;
+       	text-align: center;
+       }
 
-  tr {
-    margin-bottom: 15px;
-    background: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-radius: 6px;
-    padding: 10px;
-  }
+       th{
+       	background: grey;
+       	color: white;
+       }
+     </style>
+   </head>
 
-  td {
-    border: none;
-    text-align: left;
-    padding: 8px;
-    position: relative;
-  }
+   <body>
 
-  td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    display: block;
-    color: #555;
-    margin-bottom: 3px;
-  }
+   	<h1>Work Load Management Module</h1>
 
-  button {
-    width: 100%;
-  }
-}
+   	<form>
 
+   		<label>Name</label>
+   		<input type="text" id="p-name">
 
-	
-</style>
-</head>
+   		<label>Task Name</label>
+   		<input type="text" id="task-name">
 
-<body>
+   		<label>Task Description</label>
+   		<textarea id="task-desc"></textarea>
 
-<h1>Work Load Management Module</h1>
+   		<label>Category</label><br>
+   		<input type="radio" name="category" value="Personal"> Personal
+   		<input type="radio" name="category" value="Office"> Office
 
-<form>
+   		<br><br>
+   		<label>Priority</label><br>
+   		<input type="radio" name="priority" value="high"> High
+   		<input type="radio" name="priority" value="medium"> Medium
+   		<input type="radio" name="priority" value="low"> Low
 
-<label>Name</label>
-<input type="text" id="p-name">
+   		<br><br>
+   		<label>Start Date</label>
+   		<input type="date" id="sdate">
 
-<label>Task Name</label>
-<input type="text" id="task-name">
+   		<label>Deadline Date</label>
+   		<input type="date" id="ddate">
 
-<label>Task Description</label>
-<textarea id="task-desc"></textarea>
+   		<label>Estimated Time</label>
+   		<input type="time" id="etime">
 
-<label>Category</label><br>
-<input type="radio" name="category" value="Personal"> Personal
-<input type="radio" name="category" value="Office"> Office
+   		<label>Status</label>
+   		<select id="status">
+   			<option>Not Started</option>
+   			<option>In Progress</option>
+   			<option>Completed</option>
+   		</select>
 
-<br><br>
-<label>Priority</label><br>
-<input type="radio" name="priority" value="high"> High
-<input type="radio" name="priority" value="medium"> Medium
-<input type="radio" name="priority" value="low"> Low
+   		<button type="button" onclick="display()">Submit</button>
+   	</form>
 
-<br><br>
-<label>Start Date</label>
-<input type="date" id="sdate">
-
-<label>Deadline Date</label>
-<input type="date" id="ddate">
-
-<label>Estimated Time</label>
-<input type="time" id="etime">
-
-<label>Status</label>
-<select id="status">
-  <option>Not Started</option>
-  <option>In Progress</option>
-  <option>Completed</option>
-</select>
-
-<button type="button" onclick="display()">Submit</button>
-</form>
-
-
-
+   	<table id="taskTable">
+   		<tr>
+   			<th>Name</th>
+   			<th>Task</th>
+   			<th>Description</th>
+   			<th>Category</th>
+   			<th>Priority</th>
+   			<th>Start Date</th>
+   			<th>Deadline</th>
+   			<th>Estimated Time</th>
+   			<th>Status</th>
+   			<th>Action</th>
+   		</tr>
+   	</table>
 
 <script>
-// 🔹 LOAD TASKS FROM localStorage
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-// 🔹 DISPLAY STORED TASKS ON PAGE LOAD
-window.onload = function(){
-  tasks.forEach((task, index) => addRow(task, index));
-};
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-// 🔹 ADD TASK
-function display(){
 
-  let category = document.querySelector('input[name="category"]:checked');
-  let priority = document.querySelector('input[name="priority"]:checked');
+       window.onload = function(){
+                 tasks.forEach((task, index) => addRow(task, index));
+               };
 
-  if(!category || !priority){
-    alert("Please select category and priority");
-    return;
-  }
 
-  let task = {
-    name: document.getElementById("p-name").value,
-    taskname: document.getElementById("task-name").value,
-    taskdesc: document.getElementById("task-desc").value,
-    category: category.value,
-    priority: priority.value,
-    sdate: document.getElementById("sdate").value,
-    ddate: document.getElementById("ddate").value,
-    etime: document.getElementById("etime").value,
-    status: document.getElementById("status").value
-  };
+       function display(){
 
-  tasks.push(task);
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+              let category = document.querySelector('input[name="category"]:checked');
+              let priority = document.querySelector('input[name="priority"]:checked');
 
-  addRow(task, tasks.length - 1);
-}
+              if(!category || !priority){
+                    alert("Please select category and priority");
+                    return;
+               }
 
-// 🔹 ADD ROW TO TABLE
-function addRow(t, index){
+          let task = {
+                 name: document.getElementById("p-name").value,
+                 taskname: document.getElementById("task-name").value,
+                 taskdesc: document.getElementById("task-desc").value,
+                 category: category.value,
+                 priority: priority.value,
+                 sdate: document.getElementById("sdate").value,
+                 ddate: document.getElementById("ddate").value,
+                 etime: document.getElementById("etime").value,
+                 status: document.getElementById("status").value
+           };
 
-  let table = document.getElementById("taskTable");
-  let row = table.insertRow(-1);
+            tasks.push(task);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
 
- row.innerHTML =
-  "<td data-label='Name'>"+t.name+"</td>"+
-  "<td data-label='Task'>"+t.taskname+"</td>"+
-  "<td data-label='Description'>"+t.taskdesc+"</td>"+
-  "<td data-label='Category'>"+t.category+"</td>"+
-  "<td data-label='Priority'>"+t.priority+"</td>"+
-  "<td data-label='Start Date'>"+t.sdate+"</td>"+
-  "<td data-label='Deadline'>"+t.ddate+"</td>"+
-  "<td data-label='Estimated Time'>"+t.etime+"</td>"+
-  "<td data-label='Status'>"+t.status+"</td>"+
-  "<td data-label='Action'><button onclick='del("+index+")'>Delete</button></td>";
+            addRow(task, tasks.length - 1);
+      }
 
-}
 
-// 🔹 DELETE TASK
-function del(index){
-  tasks.splice(index, 1);
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-  location.reload();
-}
+       function addRow(t, index){
+
+              let table = document.getElementById("taskTable");
+              let row = table.insertRow(-1);
+
+              row.innerHTML =
+              "<td>"+t.name+"</td>"+
+              "<td>"+t.taskname+"</td>"+
+              "<td>"+t.taskdesc+"</td>"+
+              "<td>"+t.category+"</td>"+
+              "<td>"+t.priority+"</td>"+
+              "<td>"+t.sdate+"</td>"+
+              "<td>"+t.ddate+"</td>"+
+              "<td>"+t.etime+"</td>"+
+              "<td>"+t.status+"</td>"+
+              "<td><button onclick='del("+index+")'>Delete</button></td>";
+         }
+
+
+              function del(index){
+                      tasks.splice(index, 1);
+                      localStorage.setItem("tasks", JSON.stringify(tasks));
+                       location.reload();
+                    }
 </script>
 
 </body>
 </html>
-
-
