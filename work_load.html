@@ -434,6 +434,47 @@ th{
   background: grey;
   color: white;
 }
+@media (max-width: 768px) {
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    padding: 10px;
+  }
+
+  td {
+    border: none;
+    text-align: left;
+    padding: 8px;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    color: #555;
+    margin-bottom: 3px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+
+	
 </style>
 </head>
 
@@ -482,20 +523,23 @@ th{
 <button type="button" onclick="display()">Submit</button>
 </form>
 
-<table id="taskTable">
-<tr>
-  <th>Name</th>
-  <th>Task</th>
-  <th>Description</th>
-  <th>Category</th>
-  <th>Priority</th>
-  <th>Start Date</th>
-  <th>Deadline</th>
-  <th>Estimated Time</th>
-  <th>Status</th>
-  <th>Action</th>
-</tr>
-</table>
+<div class="table-wrapper">
+  <table id="taskTable">
+    <tr>
+      <th>Name</th>
+      <th>Task</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Priority</th>
+      <th>Start Date</th>
+      <th>Deadline</th>
+      <th>Estimated Time</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </table>
+</div>
+
 
 <script>
 // 🔹 LOAD TASKS FROM localStorage
@@ -541,17 +585,18 @@ function addRow(t, index){
   let table = document.getElementById("taskTable");
   let row = table.insertRow(-1);
 
-  row.innerHTML =
-    "<td>"+t.name+"</td>"+
-    "<td>"+t.taskname+"</td>"+
-    "<td>"+t.taskdesc+"</td>"+
-    "<td>"+t.category+"</td>"+
-    "<td>"+t.priority+"</td>"+
-    "<td>"+t.sdate+"</td>"+
-    "<td>"+t.ddate+"</td>"+
-    "<td>"+t.etime+"</td>"+
-    "<td>"+t.status+"</td>"+
-    "<td><button onclick='del("+index+")'>Delete</button></td>";
+ row.innerHTML =
+  "<td data-label='Name'>"+t.name+"</td>"+
+  "<td data-label='Task'>"+t.taskname+"</td>"+
+  "<td data-label='Description'>"+t.taskdesc+"</td>"+
+  "<td data-label='Category'>"+t.category+"</td>"+
+  "<td data-label='Priority'>"+t.priority+"</td>"+
+  "<td data-label='Start Date'>"+t.sdate+"</td>"+
+  "<td data-label='Deadline'>"+t.ddate+"</td>"+
+  "<td data-label='Estimated Time'>"+t.etime+"</td>"+
+  "<td data-label='Status'>"+t.status+"</td>"+
+  "<td data-label='Action'><button onclick='del("+index+")'>Delete</button></td>";
+
 }
 
 // 🔹 DELETE TASK
@@ -564,3 +609,4 @@ function del(index){
 
 </body>
 </html>
+
